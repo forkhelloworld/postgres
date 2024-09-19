@@ -8,7 +8,7 @@ CREATE TABLE users (
 
 CREATE TABLE books (
     id serial PRIMARY KEY,
-    user_id int REFERENCES users,
+    user_id int REFERENCES users DEFAULT NULL,
     author varchar(256) NOT NULL CHECK (author != ''),
     title varchar(256) NOT NULL CHECK (title != ''),
     year date,
@@ -24,12 +24,13 @@ VALUES (
     'Baker street'
   );
 
-INSERT INTO books (user_id, author, title, year, number_of_page)
+INSERT INTO books (author, title, year, number_of_page)
 VALUES (
-    1,
     'Joanne Rowling',
     'Harry Potter and the Philosophers Stone',
     '1997-01-01',
     350
 );
 
+-- DROP TABLE users;
+-- DROP TABLE books;
