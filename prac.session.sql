@@ -15,22 +15,22 @@ CREATE TABLE books (
     number_of_page int NOT NULL CHECK (number_of_page > 0)
 );
 
+DROP TABLE books;
+
 
 INSERT INTO users (first_name, last_name, phone_number, address)
 VALUES (
-    'Jon',
-    'Jonson',
+    'Lisa',
+    'Simpson',
     '+123456789',
     'Baker street'
   );
 
-INSERT INTO books (author, title, year, number_of_page)
+INSERT INTO books (user_id, author, title, year, number_of_page)
 VALUES (
+    2,
     'Joanne Rowling',
     'Harry Potter and the Philosophers Stone',
     '1997-01-01',
     350
 );
-
--- DROP TABLE users;
--- DROP TABLE books;
